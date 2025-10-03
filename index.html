@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plants vs. Zombies - Vanilla JS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-wrapper">
+    <header class="top-bar">
+      <div class="sun-display">Sun: <span id="sunCount">0</span></div>
+      <div class="level-display">Level: <span id="levelName">-</span></div>
+      <div class="controls">
+        <button id="startButton">Start</button>
+        <button id="pauseButton" disabled>Pause</button>
+        <button id="restartButton">Restart</button>
+      </div>
+      <div class="wave-display">Wave <span id="waveInfo">0/0</span></div>
+      <button id="audioToggle" class="audio-toggle" aria-pressed="false">🔊 On</button>
+    </header>
+    <section id="cardBar" class="card-bar"></section>
+    <main class="board-wrapper">
+      <canvas id="gameCanvas" width="900" height="500" aria-label="Plants vs Zombies game board"></canvas>
+    </main>
+  </div>
+
+  <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true">
+    <div class="overlay-panel">
+      <h2 id="overlayTitle">Game Over</h2>
+      <p id="overlayMessage">Try again?</p>
+      <div class="overlay-actions">
+        <button id="overlayPrimary">Restart</button>
+        <button id="overlaySecondary" class="hidden">Next Level</button>
+      </div>
+    </div>
+  </div>
+
+  <template id="cardTemplate">
+    <div class="card" data-type="">
+      <div class="card-title"></div>
+      <div class="card-cost"></div>
+      <div class="cooldown-mask"></div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
