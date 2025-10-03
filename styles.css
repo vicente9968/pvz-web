@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(180deg, #8fd3f4 0%, #84fab0 100%);
+  min-height: 100vh;
+  padding: 32px;
+  color: #2f4858;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 1rem;
+}
+
+.layout {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.game-area {
+  position: relative;
+}
+
+canvas {
+  border: 6px solid #2f4858;
+  border-radius: 16px;
+  background: #4caf50;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  font-size: 2rem;
+  color: #2f4858;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.3s ease;
+}
+
+.message.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.status {
+  min-width: 220px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.restart {
+  padding: 12px 16px;
+  background: #ffb703;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1d3557;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}

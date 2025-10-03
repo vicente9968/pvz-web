@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PVZ Web Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>植物大战僵尸 - 简易波次示例</h1>
+      <p class="description">
+        僵尸会在 10 秒后开始生成，持续 60 秒。击退全部僵尸即可获胜。
+      </p>
+    </header>
+    <main class="layout">
+      <section class="game-area">
+        <canvas id="game-canvas" width="900" height="500"></canvas>
+        <div id="message" class="message hidden"></div>
+      </section>
+      <aside class="sidebar">
+        <div class="status" id="status"></div>
+        <button id="restart" class="restart">重新开始</button>
+      </aside>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
