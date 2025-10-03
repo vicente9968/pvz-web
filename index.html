@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PVZ Web Prototype</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Segoe UI", "PingFang SC", "Microsoft Yahei", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #e1f3ff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        background: #2675c7;
+        color: white;
+        padding: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      #sun-display {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      #card-bar {
+        display: flex;
+        gap: 12px;
+      }
+
+      .card {
+        width: 120px;
+        padding: 12px;
+        border-radius: 8px;
+        background: white;
+        color: #1c3a57;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+        border: 2px solid transparent;
+      }
+
+      .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .card.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        transform: none;
+        box-shadow: none;
+      }
+
+      .card.selected {
+        border-color: #fdd835;
+        box-shadow: 0 0 0 3px rgba(253, 216, 53, 0.5);
+      }
+
+      .card-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      .card-body {
+        font-size: 0.9rem;
+        flex: 1;
+      }
+
+      .card-footer {
+        font-size: 0.85rem;
+        color: #0e2e4a;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 24px;
+      }
+
+      #board {
+        display: grid;
+        grid-template-columns: repeat(9, 100px);
+        grid-template-rows: repeat(5, 110px);
+        gap: 4px;
+        background: #5ca346;
+        padding: 8px;
+        border-radius: 12px;
+        box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .cell {
+        position: relative;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+        border: 2px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .cell:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .plant-token {
+        width: 70px;
+        height: 70px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #0a1f33;
+        font-weight: bold;
+        text-align: center;
+        padding: 8px;
+        box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.4);
+      }
+
+      .plant-token small {
+        font-size: 0.7rem;
+        font-weight: normal;
+      }
+
+      footer {
+        text-align: center;
+        padding: 12px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="sun-display">阳光：0</div>
+      <div id="card-bar"></div>
+    </header>
+    <main>
+      <div id="board"></div>
+    </main>
+    <footer>使用占位元素的植物大战僵尸原型</footer>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
