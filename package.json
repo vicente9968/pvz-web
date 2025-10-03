@@ -1,0 +1,12 @@
+{
+  "name": "pvz-web",
+  "version": "1.0.0",
+  "description": "Development tooling for previewing the pvz-web static site.",
+  "scripts": {
+    "dev": "http-server . -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "license": "MIT"
+}
